@@ -1,0 +1,99 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Messmate in-app mark (theme-aware)
+    ───────────────────────────────────────────────
+    Same composition as app_icon.svg (open book +
+    jade bowl + steam), with colors picked to read
+    on both light and dark surfaces:
+
+      • Pages:    a soft cream that sits between
+                  the light theme background and the
+                  dark theme background, with a
+                  subtle indigo spine shadow.
+      • Bowl:     the app's "money" jade — same on
+                  both themes, theme-extension token.
+      • Steam:    a translucent dark-indigo stroke
+                  that reads on light surfaces; the
+                  alpha lets it shift to a subtle
+                  ghost on dark surfaces without
+                  disappearing.
+
+    We avoid pure white in the art so the mark
+    never blends into a white background.
+  -->
+
+  <!--
+    ── OPEN BOOK ──
+    Two trapezoid pages meeting at a central spine,
+    bottom-heavy so the book feels grounded.
+  -->
+  <g>
+    <!-- Left page -->
+    <path d="M 64 372
+             L 64 244
+             Q 96 200 152 200
+             Q 208 200 248 232
+             L 248 372
+             Q 208 340 152 340
+             Q 96 340 64 372 Z"
+          fill="#F5F3EE"/>
+
+    <!-- Right page -->
+    <path d="M 448 372
+             L 448 244
+             Q 416 200 360 200
+             Q 304 200 264 232
+             L 264 372
+             Q 304 340 360 340
+             Q 416 340 448 372 Z"
+          fill="#F5F3EE"/>
+
+    <!-- Spine shadow -->
+    <path d="M 248 232
+             L 264 232
+             L 264 372
+             L 248 372 Z"
+          fill="#1F1F28" opacity="0.18"/>
+
+    <!-- Ledger lines on the left page (jade) -->
+    <g stroke="#2E8C6E" stroke-width="3"
+       stroke-linecap="round" opacity="0.7">
+      <line x1="104" y1="280" x2="208" y2="280"/>
+      <line x1="104" y1="300" x2="180" y2="300"/>
+      <line x1="104" y1="320" x2="216" y2="320"/>
+    </g>
+    <!-- Ledger lines on the right page -->
+    <g stroke="#2E8C6E" stroke-width="3"
+       stroke-linecap="round" opacity="0.7">
+      <line x1="304" y1="280" x2="408" y2="280"/>
+      <line x1="332" y1="300" x2="408" y2="300"/>
+      <line x1="296" y1="320" x2="408" y2="320"/>
+    </g>
+  </g>
+
+  <!--
+    ── JADE BOWL ──
+  -->
+  <g transform="translate(256 196)">
+    <ellipse cx="0" cy="0" rx="120" ry="24" fill="#5FD49F"/>
+    <path d="M -120 0
+             Q -120 48 0 48
+             Q 120 48 120 0
+             Z"
+          fill="#2E8C6E"/>
+    <ellipse cx="0" cy="4" rx="100" ry="12" fill="#1F6A52" opacity="0.5"/>
+  </g>
+
+  <!--
+    ── STEAM ──
+    Rendered as indigo strokes so they read on
+    light surfaces; the alpha keeps them soft on
+    dark surfaces.
+  -->
+  <g fill="none" stroke="#5A5FBA" stroke-width="9"
+     stroke-linecap="round" opacity="0.7">
+    <path d="M 210 156 q -10 -20 6 -34"/>
+    <path d="M 256 142 q -10 -20 6 -34"/>
+    <path d="M 302 156 q -10 -20 6 -34"/>
+  </g>
+</svg>
