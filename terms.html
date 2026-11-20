@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Terms of Service — Bachelor Book</title>
   <meta name="description" content="Terms of Service for the Bachelor Book mess-bookkeeping app." />
-  <meta name="theme-color" content="#2A2F7A" />
+  <meta name="theme-color" content="#14181E" />
   <link rel="icon" type="image/svg+xml" href="./logo.svg" />
   <style>
     :root {
-      --bg: #fafaf7; --fg: #1a1a1f; --muted: #5a5a66;
-      --brand: #2A2F7A; --brand-light: #5A5FBA;
-      --card: #ffffff; --border: #e6e4dd;
-      --shadow: 0 1px 2px rgba(20,20,40,0.04), 0 8px 24px rgba(20,20,40,0.06);
+      --bg: #eef1f4; --fg: #212529; --muted: #5c6670;
+      --brand: #343A40; --accent: #0F766E;
+      --card: #ffffff; --border: #dee2e6;
+      --shadow: 0 1px 2px rgba(20,24,30,0.04), 0 8px 24px rgba(20,24,30,0.06);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #11121a; --fg: #f3f1ec; --muted: #a4a3b3;
-        --brand: #8d92e3; --brand-light: #b1b5f0;
-        --card: #1a1c26; --border: #2a2c38;
-        --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+        --bg: #12161A; --fg: #F8F9FA; --muted: #ADB5BD;
+        --brand: #E9ECEF; --accent: #2DD4BF;
+        --card: #1E242B; --border: #2B323B;
+        --shadow: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.35);
       }
     }
     * { box-sizing: border-box; }
@@ -28,7 +28,7 @@
       font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
       background: var(--bg); color: var(--fg); -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--brand); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; font-weight: 500; }
     a:hover { text-decoration: underline; }
 
     .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
@@ -37,13 +37,14 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 24px; max-width: 960px; margin: 0 auto;
     }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand img { width: 36px; height: 36px; display: block; }
-    .brand .name { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
-    nav { display: flex; gap: 22px; font-size: 14px; }
-    nav a { color: var(--muted); }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); }
+    .brand:hover { text-decoration: none; }
+    .brand img { width: 36px; height: 36px; display: block; border-radius: 9px; }
+    .brand .name { font-weight: 800; font-size: 17px; letter-spacing: -0.02em; }
+    nav { display: flex; gap: 20px; font-size: 14px; }
+    nav a { color: var(--muted); font-weight: 500; }
     nav a:hover { color: var(--fg); text-decoration: none; }
-    nav a.active { color: var(--fg); font-weight: 600; }
+    nav a.active { color: var(--fg); font-weight: 700; }
 
     main { padding: 24px 0 32px; }
     h1 {
@@ -51,18 +52,20 @@
       line-height: 1.15; margin: 8px 0 4px;
       letter-spacing: -0.02em; font-weight: 800;
     }
-    h2 { font-size: 19px; margin: 32px 0 8px; letter-spacing: -0.005em; }
+    h2 { font-size: 19px; margin: 32px 0 8px; letter-spacing: -0.01em; }
     p, li { color: var(--fg); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
     .muted { color: var(--muted); }
     .updated {
-      display: inline-block; margin: 4px 0 24px;
-      padding: 4px 10px; border-radius: 999px;
+      display: inline-block; margin: 6px 0 24px;
+      padding: 4px 12px; border-radius: 999px;
       background: var(--card); border: 1px solid var(--border);
-      font-size: 13px; color: var(--muted);
+      font-size: 13px; color: var(--muted); font-weight: 500;
     }
     .doc {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px 28px;
+      border-radius: 16px; padding: 30px;
       box-shadow: var(--shadow);
     }
     @media (max-width: 540px) { .doc { padding: 22px 18px; } }
@@ -76,7 +79,7 @@
       display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between;
       align-items: center;
     }
-    footer.site a { color: var(--muted); }
+    footer.site a { color: var(--muted); font-weight: 500; }
     footer.site a:hover { color: var(--fg); }
 
     @media (max-width: 540px) {
@@ -87,55 +90,59 @@
 <body>
   <header class="site">
     <a class="brand" href="./index.html">
-      <img src="./logo.svg" alt="" />
+      <img src="./logo.svg" alt="Bachelor Book logo" />
       <span class="name">Bachelor Book</span>
     </a>
     <nav>
       <a href="./index.html">Home</a>
       <a href="./privacy.html">Privacy</a>
       <a href="./terms.html" class="active">Terms</a>
+      <a href="./delete-account.html">Delete Account</a>
     </nav>
   </header>
 
   <main>
     <div class="wrap">
       <h1>Terms of Service</h1>
-      <span class="updated">Effective date: 2026-01-01</span>
+      <span class="updated">Last updated: November 20, 2026</span>
 
       <div class="doc">
         <p>
           These Terms of Service ("Terms") govern your use of the Bachelor Book
-          application and related services (the "Service"). By creating an account
-          or using the Service, you agree to these Terms.
+          application (<code>app.bachelorbook</code>) and related services (the
+          "Service"). By creating an account or using the Service, you agree to
+          these Terms.
         </p>
 
         <h2>1. The Service</h2>
         <p>
-          Bachelor Book is a mess-bookkeeping tool. It lets a small group of
-          housemates ("a mess") keep a shared, transparent record of meals, expenses,
-          rent, utilities, and month-end settlement. The Service is a tool, not a
-          financial advisor or accountant; the mess's members are responsible for
-          resolving disputes among themselves.
+          Bachelor Book is a shared mess-bookkeeping tool. It lets housemates
+          ("a mess") keep a transparent record of daily meals, expenses, rent,
+          utilities, and month-end settlement. The Service is an organizational
+          tool, not a financial advisor, bank, or accountant; mess members are
+          responsible for verifying figures and settling payments among themselves.
         </p>
 
         <h2>2. Accounts</h2>
         <p>
           You sign in with a Google account. You are responsible for activity that
-          happens under your account. Tell us promptly if you believe your account
-          has been compromised.
+          happens under your account. Contact us promptly if you believe your
+          account has been compromised.
         </p>
 
         <h2>3. Messes and shared data</h2>
         <p>
-          When you join a mess, the other active members of that mess can see the
-          records you add to it (meals, expenses, and so on). This transparency is
-          the core feature of the Service. Do not record anything in a mess that
-          you are not comfortable with the other members seeing.
+          When you join a mess, other active members of that mess can see the
+          records you participate in (meals, expenses, rent, and settlement
+          summaries). This shared visibility is the core feature of the Service.
+          Do not record anything in a mess that you are not comfortable with your
+          messmates seeing.
         </p>
         <p>
-          The mess manager (or whoever the mess's rules give authority to) can
-          approve, reject, or delete records. Manager actions are recorded in the
-          mess's audit log and are visible to all active members.
+          The mess manager can approve or reject expenses, manage utility bills,
+          update meal rules and cutoff times, manage member dates/rent, and close
+          meal months. Manager actions are recorded in the mess's audit log and
+          are visible to all active members.
         </p>
 
         <h2>4. Acceptable use</h2>
@@ -147,27 +154,29 @@
           <li>Use the Service for any unlawful purpose.</li>
         </ul>
 
-        <h2>5. Fees</h2>
+        <h2>5. Fees and advertising</h2>
         <p>
-          The Service is currently provided free of charge. Free use is supported
-          in part by advertising served through Google AdMob. We may introduce a
-          paid version without advertising in the future; if we do, we will tell
-          you before charging.
+          The Service is currently provided free of charge and supported by
+          advertising served through Google AdMob. We may introduce an optional
+          ad-free paid tier in the future; if we do, pricing and terms will be
+          clearly presented before any charge occurs.
         </p>
 
         <h2>6. Your content</h2>
         <p>
           You retain ownership of the data you add to a mess. You grant the other
-          active members of that mess a license to view and use that data for the
-          purpose of running the mess, and you grant us a limited license to store
-          and process that data to operate the Service.
+          active members of that mess a license to view and use that data for
+          running the mess, and you grant us a limited license to store and
+          process that data to operate the Service.
         </p>
 
-        <h2>7. Termination</h2>
+        <h2>7. Leaving a mess and account deletion</h2>
         <p>
-          You can stop using the Service at any time by signing out. You can leave
-          a mess at any time from inside the app. We may suspend or terminate
-          accounts that violate these Terms or that pose a security risk.
+          You can leave any mess or permanently delete your account at any time
+          directly inside the app (see our
+          <a href="./delete-account.html">Account Deletion Guide</a>). We may
+          suspend or terminate accounts that violate these Terms or pose a
+          security risk to the Service.
         </p>
 
         <h2>8. Disclaimers</h2>
@@ -175,39 +184,32 @@
           The Service is provided "as is" and "as available". We disclaim all
           warranties, express or implied, including warranties of merchantability,
           fitness for a particular purpose, and non-infringement. We do not warrant
-          that the Service will be uninterrupted, secure, or error-free, or that
-          the calculations will be free of bugs. Always double-check the
-          settlement before acting on it.
+          that the Service will be uninterrupted, secure, or error-free. Always
+          review monthly settlement summaries with your messmates before paying.
         </p>
         <p>
           Advertisements shown in the app are provided by Google AdMob. We do not
-          endorse, control, or take responsibility for the content of third-party
-          ads, the products or services they advertise, or the way Google selects
-          and serves them. See Google's privacy policy for how advertising data
-          is handled.
+          endorse, control, or take responsibility for third-party ads or the
+          products or services they promote.
         </p>
 
         <h2>9. Limitation of liability</h2>
         <p>
-          The Service is provided free of charge. To the maximum extent permitted
-          by law, we will not be liable for any indirect, incidental, special,
-          consequential, or punitive damages arising out of or relating to your
-          use of the Service, including but not limited to disputes between
-          members of the same mess, mistakes in the settlement calculation, or
-          reliance on the numbers shown in the app.
+          To the maximum extent permitted by law, we will not be liable for any
+          indirect, incidental, special, consequential, or punitive damages
+          arising out of or relating to your use of the Service, including
+          disputes between members of a mess or reliance on settlement figures.
         </p>
         <p>
-          Nothing in these Terms is intended to exclude or limit liability that
-          cannot be excluded or limited under the law that applies to you (for
-          example, liability for fraud, or for personal injury caused by
-          negligence).
+          Nothing in these Terms excludes or limits liability that cannot be
+          excluded or limited under applicable law.
         </p>
 
         <h2>10. Changes to these Terms</h2>
         <p>
-          We may update these Terms. The new version will be posted on this page
-          with an updated effective date. If the changes are material, we will
-          notify active users through the app.
+          We may update these Terms from time to time. The updated version will be
+          posted on this page with a revised "Last updated" date. For material
+          changes, we will notify active users through the app.
         </p>
 
         <h2>11. Governing law</h2>
@@ -219,7 +221,8 @@
 
         <h2>12. Contact</h2>
         <p>
-          Questions about these Terms: <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>.
+          Questions about these Terms:
+          <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>.
         </p>
       </div>
     </div>
@@ -232,6 +235,7 @@
           <a href="./index.html">Home</a> ·
           <a href="./privacy.html">Privacy</a> ·
           <a href="./terms.html">Terms</a> ·
+          <a href="./delete-account.html">Delete Account</a> ·
           <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>
         </div>
         <div>© 2026 Bachelor Book</div>

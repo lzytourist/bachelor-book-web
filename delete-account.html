@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delete Your Account — Bachelor Book</title>
+  <meta name="description" content="How to permanently delete your Bachelor Book account and associated personal data." />
+  <meta name="theme-color" content="#14181E" />
+  <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+  <style>
+    :root {
+      --bg: #eef1f4; --fg: #212529; --muted: #5c6670;
+      --brand: #343A40; --accent: #0F766E; --danger: #DC2626;
+      --accent-soft: rgba(15, 118, 110, 0.10);
+      --danger-soft: rgba(220, 38, 38, 0.08);
+      --card: #ffffff; --border: #dee2e6;
+      --shadow: 0 1px 2px rgba(20,24,30,0.04), 0 8px 24px rgba(20,24,30,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12161A; --fg: #F8F9FA; --muted: #ADB5BD;
+        --brand: #E9ECEF; --accent: #2DD4BF; --danger: #F87171;
+        --accent-soft: rgba(45, 212, 191, 0.12);
+        --danger-soft: rgba(248, 113, 113, 0.12);
+        --card: #1E242B; --border: #2B323B;
+        --shadow: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+      background: var(--bg); color: var(--fg); -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+    header.site {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; max-width: 960px; margin: 0 auto;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); }
+    .brand:hover { text-decoration: none; }
+    .brand img { width: 36px; height: 36px; display: block; border-radius: 9px; }
+    .brand .name { font-weight: 800; font-size: 17px; letter-spacing: -0.02em; }
+    nav { display: flex; gap: 20px; font-size: 14px; }
+    nav a { color: var(--muted); font-weight: 500; }
+    nav a:hover { color: var(--fg); text-decoration: none; }
+    nav a.active { color: var(--fg); font-weight: 700; }
+
+    main { padding: 24px 0 32px; }
+    h1 {
+      font-size: clamp(28px, 4vw, 36px);
+      line-height: 1.15; margin: 8px 0 6px;
+      letter-spacing: -0.02em; font-weight: 800;
+    }
+    h2 { font-size: 19px; margin: 28px 0 10px; letter-spacing: -0.01em; }
+    .subtitle { color: var(--muted); margin: 0 0 24px; font-size: 15.5px; }
+    .doc {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 540px) { .doc { padding: 22px 18px; } }
+
+    .step-list { padding-left: 20px; margin: 10px 0 16px; }
+    .step-list li { margin-bottom: 8px; }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px; margin: 16px 0;
+    }
+    .box {
+      padding: 16px 18px; border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .box.deleted { background: var(--danger-soft); border-color: rgba(220, 38, 38, 0.25); }
+    .box.retained { background: var(--accent-soft); border-color: rgba(15, 118, 110, 0.25); }
+    .box h3 { margin: 0 0 8px; font-size: 15px; }
+    .box.deleted h3 { color: var(--danger); }
+    .box.retained h3 { color: var(--accent); }
+    .box ul { margin: 0; padding-left: 18px; font-size: 14px; }
+    .box li { margin-bottom: 5px; }
+
+    .btn {
+      display: inline-block; margin-top: 8px;
+      padding: 11px 18px; border-radius: 10px;
+      background: var(--brand); color: var(--bg);
+      font-weight: 700; font-size: 14px;
+    }
+    .btn:hover { text-decoration: none; opacity: 0.9; }
+
+    footer.site {
+      margin-top: 48px; padding: 28px 0 36px;
+      border-top: 1px solid var(--border);
+      font-size: 14px; color: var(--muted);
+    }
+    footer.site .row {
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between;
+      align-items: center;
+    }
+    footer.site a { color: var(--muted); font-weight: 500; }
+    footer.site a:hover { color: var(--fg); }
+
+    @media (max-width: 540px) {
+      nav { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <a class="brand" href="./index.html">
+      <img src="./logo.svg" alt="Bachelor Book logo" />
+      <span class="name">Bachelor Book</span>
+    </a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./delete-account.html" class="active">Delete Account</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h1>Delete Your Bachelor Book Account</h1>
+      <p class="subtitle">
+        You can permanently delete your account and personal data instantly inside
+        the Bachelor Book Android app, or request deletion by email if you have
+        already uninstalled the app.
+      </p>
+
+      <div class="doc">
+        <h2>Option 1: Delete instantly inside the app (Recommended)</h2>
+        <ol class="step-list">
+          <li>Open the <strong>Bachelor Book</strong> app and sign in to your account.</li>
+          <li>Go to the <strong>Mess</strong> tab in the bottom navigation bar.</li>
+          <li>Scroll down to the <strong>Danger Zone</strong> section and tap <strong>Delete Account</strong>. <em>(If you are not currently in any mess, tap <strong>Delete Account</strong> at the bottom of the Welcome screen.)</em></li>
+          <li>Review the summary in the confirmation dialog and tap <strong>Delete Permanently</strong>.</li>
+        </ol>
+        <p>
+          Your personal data is erased immediately, you are signed out, and all
+          push notification tokens are revoked.
+        </p>
+
+        <h2>Option 2: Request deletion by email (Without the app)</h2>
+        <p>
+          If you have uninstalled Bachelor Book or can no longer access the app,
+          send an email from the Google address you used to sign in:
+        </p>
+        <a class="btn" href="mailto:bachelorbookapp@gmail.com?subject=Bachelor%20Book%20Account%20Deletion%20Request&body=Please%20permanently%20delete%20my%20Bachelor%20Book%20account%20associated%20with%20this%20email%20address.">
+          Email bachelorbookapp@gmail.com
+        </a>
+        <p style="margin-top: 12px; font-size: 14px; color: var(--muted);">
+          We verify ownership via your sign-in email address and process email
+          deletion requests within <strong>7 business days</strong> (and no later
+          than 30 days).
+        </p>
+
+        <h2>What happens to your data</h2>
+        <div class="grid">
+          <div class="box deleted">
+            <h3>Permanently deleted immediately</h3>
+            <ul>
+              <li>Display name and email address</li>
+              <li>Profile photo URL and Google/Firebase account link</li>
+              <li>All push notification (FCM) device tokens</li>
+              <li>Any solo mess where you were the only member</li>
+              <li>Your access to all shared messes</li>
+            </ul>
+          </div>
+          <div class="box retained">
+            <h3>Kept de-identified (shared messes only)</h3>
+            <ul>
+              <li>Historical meal counts and bazaar expense figures in shared messes with other roommates are kept de-identified as <strong>"Deleted Member"</strong> so your former roommates' monthly bills and past snapshots stay accurate.</li>
+              <li>If you were the sole manager of a shared mess, another active member is automatically promoted to manager before your account is removed.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Need help?</h2>
+        <p>
+          For any questions about your account or data, read our
+          <a href="./privacy.html">Privacy Policy</a> or contact
+          <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <a href="./index.html">Home</a> ·
+          <a href="./privacy.html">Privacy</a> ·
+          <a href="./terms.html">Terms</a> ·
+          <a href="./delete-account.html">Delete Account</a> ·
+          <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>
+        </div>
+        <div>© 2026 Bachelor Book</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

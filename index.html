@@ -3,33 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bachelor Book — Meals, bazaar & rent for your mess</title>
-  <meta name="description" content="Bachelor Book is a mess-bookkeeping app for shared flats. Track meals, bazaar, rent, utilities and month-end settlement — no more paper register." />
-  <meta name="theme-color" content="#2A2F7A" />
+  <title>Bachelor Book — Meals, bazaar &amp; monthly calculation for your mess</title>
+  <meta name="description" content="Bachelor Book is a bilingual (Bangla & English) mess-bookkeeping app for shared flats. Track daily meals, meal cutoffs, bazaar, rent, utilities, and month-end settlement." />
+  <meta name="theme-color" content="#14181E" />
   <link rel="icon" type="image/svg+xml" href="./logo.svg" />
   <style>
     :root {
-      --bg: #fafaf7;
-      --fg: #1a1a1f;
-      --muted: #5a5a66;
-      --brand: #2A2F7A;
-      --brand-light: #5A5FBA;
-      --jade: #2E8C6E;
+      --bg: #eef1f4;
+      --fg: #212529;
+      --muted: #5c6670;
+      --brand: #343A40;
+      --brand-deep: #14181E;
+      --accent: #0F766E;
+      --accent-soft: rgba(15, 118, 110, 0.12);
       --card: #ffffff;
-      --border: #e6e4dd;
-      --shadow: 0 1px 2px rgba(20,20,40,0.04), 0 8px 24px rgba(20,20,40,0.06);
+      --border: #dee2e6;
+      --shadow: 0 1px 2px rgba(20,24,30,0.04), 0 8px 24px rgba(20,24,30,0.07);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #11121a;
-        --fg: #f3f1ec;
-        --muted: #a4a3b3;
-        --brand: #8d92e3;
-        --brand-light: #b1b5f0;
-        --jade: #5FD49F;
-        --card: #1a1c26;
-        --border: #2a2c38;
-        --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+        --bg: #12161A;
+        --fg: #F8F9FA;
+        --muted: #ADB5BD;
+        --brand: #E9ECEF;
+        --brand-deep: #1E242B;
+        --accent: #2DD4BF;
+        --accent-soft: rgba(45, 212, 191, 0.14);
+        --card: #1E242B;
+        --border: #2B323B;
+        --shadow: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.35);
       }
     }
     * { box-sizing: border-box; }
@@ -40,7 +42,7 @@
       color: var(--fg);
       -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--brand); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
@@ -49,64 +51,68 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 24px; max-width: 960px; margin: 0 auto;
     }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand img { width: 36px; height: 36px; display: block; }
-    .brand .name { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
-    nav { display: flex; gap: 22px; font-size: 14px; }
-    nav a { color: var(--muted); }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); }
+    .brand:hover { text-decoration: none; }
+    .brand img { width: 36px; height: 36px; display: block; border-radius: 9px; }
+    .brand .name { font-weight: 800; font-size: 17px; letter-spacing: -0.02em; }
+    nav { display: flex; gap: 20px; font-size: 14px; }
+    nav a { color: var(--muted); font-weight: 500; }
     nav a:hover { color: var(--fg); text-decoration: none; }
+    nav a.active { color: var(--fg); font-weight: 700; }
 
-    .hero { padding: 56px 0 48px; text-align: center; }
+    .hero { padding: 52px 0 44px; text-align: center; }
     .hero .logo {
-      width: 144px; height: 144px; display: block; margin: 0 auto 24px;
-      filter: drop-shadow(0 6px 18px rgba(42,47,122,0.18));
+      width: 128px; height: 128px; display: block; margin: 0 auto 24px;
+      border-radius: 28px;
+      box-shadow: 0 12px 32px rgba(20, 24, 30, 0.25);
     }
     .hero h1 {
-      font-size: clamp(34px, 5.5vw, 52px);
-      line-height: 1.1; margin: 0 0 14px;
-      letter-spacing: -0.02em; font-weight: 800;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.12; margin: 0 0 14px;
+      letter-spacing: -0.025em; font-weight: 800;
     }
     .hero p.lede {
-      font-size: clamp(17px, 2vw, 19px);
+      font-size: clamp(16.5px, 2vw, 18.5px);
       color: var(--muted); max-width: 580px; margin: 0 auto 28px;
     }
     .cta {
       display: inline-block; padding: 14px 24px; border-radius: 12px;
-      background: var(--brand); color: #fff; font-weight: 600;
+      background: var(--brand); color: var(--bg); font-weight: 700;
       box-shadow: var(--shadow);
-      transition: transform 0.06s ease, filter 0.15s ease;
+      transition: transform 0.08s ease, opacity 0.15s ease;
     }
-    .cta:hover { text-decoration: none; filter: brightness(1.08); transform: translateY(-1px); }
+    .cta:hover { text-decoration: none; opacity: 0.92; transform: translateY(-1px); }
     .pill {
       display: inline-block; margin-left: 10px;
-      padding: 4px 12px; border-radius: 999px;
-      font-size: 13px; color: var(--muted);
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 13px; color: var(--muted); font-weight: 600;
       border: 1px solid var(--border); background: var(--card);
       vertical-align: middle;
     }
 
-    section { padding: 56px 0; }
+    section { padding: 48px 0; }
     section h2 {
       font-size: clamp(24px, 3vw, 30px);
-      letter-spacing: -0.01em; margin: 0 0 28px; text-align: center;
+      letter-spacing: -0.015em; margin: 0 0 28px; text-align: center;
+      font-weight: 800;
     }
 
     .features {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
     .feature {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 20px 22px;
+      border-radius: 16px; padding: 20px 22px;
       box-shadow: var(--shadow);
     }
     .feature .ic {
-      width: 32px; height: 32px; border-radius: 8px;
+      width: 34px; height: 34px; border-radius: 10px;
       display: grid; place-items: center;
-      background: rgba(46,140,110,0.12); color: var(--jade);
-      font-size: 16px; font-weight: 700; margin-bottom: 10px;
+      background: var(--accent-soft); color: var(--accent);
+      font-size: 16px; font-weight: 700; margin-bottom: 12px;
     }
-    .feature h3 { font-size: 16px; margin: 0 0 4px; }
+    .feature h3 { font-size: 16px; margin: 0 0 6px; font-weight: 700; }
     .feature p { font-size: 14px; color: var(--muted); margin: 0; }
 
     .steps {
@@ -116,28 +122,30 @@
     .step {
       display: grid; grid-template-columns: 36px 1fr; gap: 14px;
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 18px;
+      border-radius: 14px; padding: 16px 18px;
+      box-shadow: var(--shadow);
     }
     .step .n {
       width: 28px; height: 28px; border-radius: 50%;
-      background: var(--brand); color: #fff;
-      display: grid; place-items: center; font-weight: 700; font-size: 14px;
+      background: var(--accent); color: #ffffff;
+      display: grid; place-items: center; font-weight: 800; font-size: 13.5px;
     }
-    .step p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+    .step p { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
     .step strong { color: var(--fg); }
 
     .strip {
-      margin: 32px 0 0; padding: 32px;
-      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
-      color: #fff; border-radius: 18px; text-align: center;
+      margin: 40px 0 0; padding: 34px 28px;
+      background: linear-gradient(135deg, #2F3740 0%, #14181E 100%);
+      color: #F8F9FA; border-radius: 20px; text-align: center;
+      border: 1px solid #2B323B;
       box-shadow: var(--shadow);
     }
-    .strip h3 { margin: 0 0 6px; font-size: 22px; letter-spacing: -0.01em; }
-    .strip p { margin: 0 0 18px; opacity: 0.92; }
-    .strip .cta { background: #fff; color: var(--brand); }
+    .strip h3 { margin: 0 0 8px; font-size: 22px; letter-spacing: -0.01em; font-weight: 800; }
+    .strip p { margin: 0 0 20px; color: #ADB5BD; }
+    .strip .cta { background: #2DD4BF; color: #042F2E; }
 
     footer.site {
-      margin-top: 64px; padding: 28px 0 36px;
+      margin-top: 56px; padding: 28px 0 36px;
       border-top: 1px solid var(--border);
       font-size: 14px; color: var(--muted);
     }
@@ -145,13 +153,13 @@
       display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between;
       align-items: center;
     }
-    footer.site a { color: var(--muted); }
+    footer.site a { color: var(--muted); font-weight: 500; }
     footer.site a:hover { color: var(--fg); }
 
     @media (max-width: 540px) {
       nav { gap: 14px; }
-      .hero { padding: 36px 0 32px; }
-      section { padding: 40px 0; }
+      .hero { padding: 36px 0 28px; }
+      section { padding: 36px 0; }
       .pill { display: none; }
     }
   </style>
@@ -159,30 +167,31 @@
 <body>
   <header class="site">
     <a class="brand" href="./index.html">
-      <img src="./logo.svg" alt="" />
+      <img src="./logo.svg" alt="Bachelor Book logo" />
       <span class="name">Bachelor Book</span>
     </a>
     <nav>
-      <a href="./index.html">Home</a>
+      <a href="./index.html" class="active">Home</a>
       <a href="./privacy.html">Privacy</a>
       <a href="./terms.html">Terms</a>
+      <a href="./delete-account.html">Delete Account</a>
     </nav>
   </header>
 
   <main>
     <div class="wrap">
       <section class="hero">
-        <img class="logo" src="./logo.svg" alt="Bachelor Book mark" />
-        <h1>Stop arguing about the paper register.</h1>
+        <img class="logo" src="./logo.svg" alt="Bachelor Book icon" />
+        <h1>Stop arguing about the paper meal khata.</h1>
         <p class="lede">
-          A shared mess-bookkeeping app for shared flats. Track meals, bazaar
-          runs, rent and utilities — with month-end settlement everyone can
-          read.
+          A shared mess-bookkeeping app in Bangla &amp; English. Track daily meals,
+          cutoff schedules, bazaar runs, rent, and utilities — with a transparent
+          month-end calculation everyone can read.
         </p>
-        <a class="cta" href="https://play.google.com/store/apps/details?id=com.bachelorbook.app.bachelor_book">
+        <a class="cta" href="https://play.google.com/store/apps/details?id=app.bachelorbook">
           Get it on Google Play
         </a>
-        <span class="pill">Android · Free</span>
+        <span class="pill">Android · Free · বাংলা &amp; EN</span>
       </section>
 
       <section>
@@ -190,33 +199,33 @@
         <div class="features">
           <div class="feature">
             <div class="ic">●</div>
-            <h3>Today</h3>
-            <p>Tap which meals you're eating (or skipping) and add guests in two taps.</p>
+            <h3>Daily Meals &amp; Cutoffs</h3>
+            <p>Toggle breakfast, lunch, or dinner in one tap, add guest meals, schedule multi-day opt-outs, and enforce daily cutoff times.</p>
           </div>
           <div class="feature">
             <div class="ic">৳</div>
-            <h3>Expenses</h3>
-            <p>Log bazaar and repair entries. The manager approves. Everyone sees the running totals.</p>
+            <h3>Bazaar &amp; Expenses</h3>
+            <p>Log bazaar, repair, and other shared expenses. Managers approve entries so everyone sees live totals.</p>
           </div>
           <div class="feature">
             <div class="ic">▦</div>
-            <h3>Months</h3>
-            <p>Open a meal-month, watch the live meal rate, close it for a frozen settlement.</p>
+            <h3>Live Meal Rate &amp; Months</h3>
+            <p>Watch the live meal rate update automatically and close each meal-month for a frozen historical snapshot.</p>
           </div>
           <div class="feature">
             <div class="ic">◯+</div>
-            <h3>Members</h3>
-            <p>Invite by code or QR, set rent per member, hand over manager with a vote.</p>
+            <h3>QR Invites &amp; Members</h3>
+            <p>Invite roommates with an 8-character code or QR scan, configure seat rent per member, and hand over manager duty anytime.</p>
           </div>
           <div class="feature">
             <div class="ic">≡</div>
-            <h3>Utilities</h3>
-            <p>Recurring fixed costs (Wi-Fi, gas, current) that factor into the month-end split.</p>
+            <h3>Shared Utilities</h3>
+            <p>Track recurring fixed bills (maid, Wi-Fi, gas, electricity, water) split cleanly in the monthly settlement.</p>
           </div>
           <div class="feature">
             <div class="ic">⤺</div>
-            <h3>Audit log</h3>
-            <p>Every change recorded. Full transparency inside a mess, no hidden edits.</p>
+            <h3>Full Audit Log</h3>
+            <p>Every meal override, expense approval, and settings change is logged — complete transparency inside your mess.</p>
           </div>
         </div>
       </section>
@@ -228,36 +237,36 @@
             <div class="n">1</div>
             <div>
               <strong>Create or join a mess.</strong>
-              <p>A mess is your shared flat. The first person signs in and creates it; everyone else joins with a 7-character invite code.</p>
+              <p>Sign in with Google, create your flat's mess with your meal weight rules, and invite roommates via QR code or 8-character invite code.</p>
             </div>
           </div>
           <div class="step">
             <div class="n">2</div>
             <div>
-              <strong>Tap meals as you eat them.</strong>
-              <p>Every day, you check off breakfast, lunch and dinner. Going out? One tap to opt out. Guests over? Add them in two taps.</p>
+              <strong>Toggle meals as plans change.</strong>
+              <p>Meals default to ON. Heading out? Turn slots off before the cutoff or bulk-schedule dates on the calendar. Guests over? Add them in two taps.</p>
             </div>
           </div>
           <div class="step">
             <div class="n">3</div>
             <div>
-              <strong>Log bazaar and rent.</strong>
-              <p>Whoever shops drops a bazaar entry. The manager approves. Rent is set per member. Utilities are added once and reused.</p>
+              <strong>Log bazaar, utilities &amp; rent.</strong>
+              <p>Whoever does bazaar logs the bill for manager approval. Rent and utility bills are configured once and factored into every member's balance.</p>
             </div>
           </div>
           <div class="step">
             <div class="n">4</div>
             <div>
-              <strong>Close the month.</strong>
-              <p>At month-end, the manager closes the meal-month. The settlement is frozen. Everyone sees the same numbers.</p>
+              <strong>Close the month with zero guesswork.</strong>
+              <p>At month-end, the manager closes the meal-month. The final settlement is archived in Past Months so everyone can verify what they give or receive.</p>
             </div>
           </div>
         </div>
 
         <div class="strip">
           <h3>Available on Android</h3>
-          <p>Free to use. The mobile app is the only way to log meals on the go.</p>
-          <a class="cta" href="https://play.google.com/store/apps/details?id=com.bachelorbook.app.bachelor_book">
+          <p>Free to use in Bangla and English. Built for bachelor messes and shared flats.</p>
+          <a class="cta" href="https://play.google.com/store/apps/details?id=app.bachelorbook">
             Open in Google Play
           </a>
         </div>
@@ -269,8 +278,10 @@
     <div class="wrap">
       <div class="row">
         <div>
+          <a href="./index.html">Home</a> ·
           <a href="./privacy.html">Privacy</a> ·
           <a href="./terms.html">Terms</a> ·
+          <a href="./delete-account.html">Delete Account</a> ·
           <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>
         </div>
         <div>© 2026 Bachelor Book</div>

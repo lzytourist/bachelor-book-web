@@ -4,22 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — Bachelor Book</title>
-  <meta name="description" content="Privacy Policy for the Bachelor Book mess-bookkeeping app." />
-  <meta name="theme-color" content="#2A2F7A" />
+  <meta name="description" content="Privacy Policy for the Bachelor Book mess meal, bazaar, and monthly calculation app." />
+  <meta name="theme-color" content="#14181E" />
   <link rel="icon" type="image/svg+xml" href="./logo.svg" />
   <style>
     :root {
-      --bg: #fafaf7; --fg: #1a1a1f; --muted: #5a5a66;
-      --brand: #2A2F7A; --brand-light: #5A5FBA;
-      --card: #ffffff; --border: #e6e4dd;
-      --shadow: 0 1px 2px rgba(20,20,40,0.04), 0 8px 24px rgba(20,20,40,0.06);
+      --bg: #eef1f4; --fg: #212529; --muted: #5c6670;
+      --brand: #343A40; --brand-hover: #212529; --accent: #0F766E;
+      --accent-soft: rgba(15, 118, 110, 0.10);
+      --card: #ffffff; --border: #dee2e6;
+      --shadow: 0 1px 2px rgba(20,24,30,0.04), 0 8px 24px rgba(20,24,30,0.06);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #11121a; --fg: #f3f1ec; --muted: #a4a3b3;
-        --brand: #8d92e3; --brand-light: #b1b5f0;
-        --card: #1a1c26; --border: #2a2c38;
-        --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+        --bg: #12161A; --fg: #F8F9FA; --muted: #ADB5BD;
+        --brand: #E9ECEF; --brand-hover: #ffffff; --accent: #2DD4BF;
+        --accent-soft: rgba(45, 212, 191, 0.12);
+        --card: #1E242B; --border: #2B323B;
+        --shadow: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.35);
       }
     }
     * { box-sizing: border-box; }
@@ -28,7 +30,7 @@
       font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
       background: var(--bg); color: var(--fg); -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--brand); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; font-weight: 500; }
     a:hover { text-decoration: underline; }
 
     .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
@@ -37,13 +39,14 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 24px; max-width: 960px; margin: 0 auto;
     }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand img { width: 36px; height: 36px; display: block; }
-    .brand .name { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
-    nav { display: flex; gap: 22px; font-size: 14px; }
-    nav a { color: var(--muted); }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); }
+    .brand:hover { text-decoration: none; }
+    .brand img { width: 36px; height: 36px; display: block; border-radius: 9px; }
+    .brand .name { font-weight: 800; font-size: 17px; letter-spacing: -0.02em; }
+    nav { display: flex; gap: 20px; font-size: 14px; }
+    nav a { color: var(--muted); font-weight: 500; }
     nav a:hover { color: var(--fg); text-decoration: none; }
-    nav a.active { color: var(--fg); font-weight: 600; }
+    nav a.active { color: var(--fg); font-weight: 700; }
 
     main { padding: 24px 0 32px; }
     h1 {
@@ -51,19 +54,27 @@
       line-height: 1.15; margin: 8px 0 4px;
       letter-spacing: -0.02em; font-weight: 800;
     }
-    h2 { font-size: 19px; margin: 32px 0 8px; letter-spacing: -0.005em; }
+    h2 { font-size: 19px; margin: 32px 0 8px; letter-spacing: -0.01em; color: var(--fg); }
     p, li { color: var(--fg); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
     .muted { color: var(--muted); }
     .updated {
-      display: inline-block; margin: 4px 0 24px;
-      padding: 4px 10px; border-radius: 999px;
+      display: inline-block; margin: 6px 0 24px;
+      padding: 4px 12px; border-radius: 999px;
       background: var(--card); border: 1px solid var(--border);
-      font-size: 13px; color: var(--muted);
+      font-size: 13px; color: var(--muted); font-weight: 500;
     }
     .doc {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px 28px;
+      border-radius: 16px; padding: 30px 30px;
       box-shadow: var(--shadow);
+    }
+    .callout {
+      margin: 18px 0; padding: 14px 16px;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px; font-size: 14.5px;
     }
     @media (max-width: 540px) { .doc { padding: 22px 18px; } }
 
@@ -76,7 +87,7 @@
       display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between;
       align-items: center;
     }
-    footer.site a { color: var(--muted); }
+    footer.site a { color: var(--muted); font-weight: 500; }
     footer.site a:hover { color: var(--fg); }
 
     @media (max-width: 540px) {
@@ -87,202 +98,193 @@
 <body>
   <header class="site">
     <a class="brand" href="./index.html">
-      <img src="./logo.svg" alt="" />
+      <img src="./logo.svg" alt="Bachelor Book logo" />
       <span class="name">Bachelor Book</span>
     </a>
     <nav>
       <a href="./index.html">Home</a>
       <a href="./privacy.html" class="active">Privacy</a>
       <a href="./terms.html">Terms</a>
+      <a href="./delete-account.html">Delete Account</a>
     </nav>
   </header>
 
   <main>
     <div class="wrap">
       <h1>Privacy Policy</h1>
-      <span class="updated">Effective date: 2026-01-01</span>
+      <span class="updated">Last updated: November 20, 2026</span>
 
       <div class="doc">
         <p>
-          This Privacy Policy describes how Bachelor Book ("we", "us", "the app")
-          collects, uses, and shares information when you use the Bachelor Book mobile
-          application and related services (together, the "Service"). By using the
-          Service you agree to the practices described below.
+          This Privacy Policy describes how Bachelor Book ("we", "us", "the app",
+          Android package <code>app.bachelorbook</code>) collects, uses, stores,
+          and protects information when you use the Bachelor Book mobile
+          application and related backend services (together, the "Service").
+          By using the Service, you agree to the practices described below.
         </p>
 
         <h2>1. Information we collect</h2>
         <p><strong>Account information.</strong> When you sign in with Google, we receive
-          your Google account email, display name, profile photo URL, and a stable
-          Firebase user ID. We do not receive your Google password.</p>
-        <p><strong>Mess data.</strong> Inside a mess you create or join, we store the
-          records you and other members choose to add: meal selections, meal opt-outs,
-          guest meals, bazaar and repair expenses, utilities, rent amounts, invite
-          codes, manager votes, audit-log entries, and settlement calculations.</p>
-        <p><strong>Device and push data.</strong> If you grant notification permission,
-          we store a Firebase Cloud Messaging (FCM) device token so the app can send
-          you mess updates. We store a short device-info string (model, OS) sent at
-          registration. You can disable notifications at any time in your device
-          settings.</p>
-        <p><strong>Advertising data.</strong> When ads are shown in the app, Google
-          AdMob may collect or receive device-level identifiers (such as the Android
-          advertising ID), coarse location derived from your IP address, and
-          information about which ads you see and interact with. This data is used
-          by Google to select and serve ads, measure ad performance, and prevent
-          fraud. See Google's documentation linked in Section 9 for details.</p>
-        <p><strong>Usage data.</strong> Firebase Authentication, Firebase Cloud
-          Messaging, our backend, and AdMob log standard technical metadata
-          (timestamps, request status codes) to keep the Service running and secure.</p>
+          your Google account email address, display name, profile photo URL, and a
+          unique Google/Firebase account identifier. We never receive or store your
+          Google password.</p>
+        <p><strong>Mess and bookkeeping data.</strong> Inside a mess you create or join,
+          we store the shared records you and your messmates enter: daily meal status
+          (breakfast, lunch, dinner), scheduled meal opt-outs, guest meal counts,
+          meal cutoff times, bazaar/repair/other expenses, approval statuses, utility
+          bills, seat rent amounts, invite codes, audit-log entries, and monthly
+          settlement snapshots.</p>
+        <p><strong>Device and notification data.</strong> If you grant notification
+          permission (<code>POST_NOTIFICATIONS</code>), we store a Firebase Cloud
+          Messaging (FCM) device token and a basic platform label (Android/iOS) so we
+          can deliver mess updates (such as expense approvals or meal changes). You
+          can disable notifications at any time in your device settings.</p>
+        <p><strong>Camera permission (QR scanner).</strong> When you choose to join a
+          mess by scanning a roommate's QR code, the app requests camera access
+          (<code>CAMERA</code>). Camera frames are processed strictly on-device to
+          decode the 8-character invite code. We never capture, store, or transmit
+          photos, videos, or camera feeds.</p>
+        <p><strong>Advertising data.</strong> When ads are enabled in the free version of
+          the app, Google AdMob may collect device-level identifiers (such as the
+          Android Advertising ID), approximate IP-based location, and ad-interaction
+          diagnostics to serve ads, cap frequency, measure performance, and prevent
+          fraud. See Section 9 for details and your controls.</p>
+        <p><strong>Technical and diagnostic logs.</strong> Our backend servers, Firebase
+          Authentication, Firebase Cloud Messaging, and AdMob process standard
+          technical metadata (timestamps, IP addresses, HTTP status codes, and crash
+          or request diagnostics) to operate and secure the Service.</p>
 
         <h2>2. How we use your information</h2>
         <ul>
-          <li>To authenticate you and let you join messes.</li>
-          <li>To show your mess's shared records to other active members of the same mess.</li>
-          <li>To send push notifications about mess activity (when you have granted permission).</li>
-          <li>To show advertising through Google AdMob and measure how ads perform.</li>
-          <li>To detect and prevent abuse, and to keep the Service operational.</li>
+          <li>To authenticate your account and manage your mess memberships.</li>
+          <li>To display shared meals, expenses, utilities, audit logs, and monthly calculations to active members of your mess.</li>
+          <li>To send push notifications about mess activity when you have granted permission.</li>
+          <li>To show and measure advertising through Google AdMob so the app can remain free.</li>
+          <li>To maintain service reliability, enforce access controls, and prevent abuse.</li>
         </ul>
 
         <h2>3. What we do not do</h2>
         <ul>
-          <li>We do not sell your personal data.</li>
-          <li>We do not share your mess records with advertisers.</li>
-          <li>We do not track you across other apps or websites outside what AdMob does on Google's behalf as described above.</li>
+          <li>We do not sell your personal information.</li>
+          <li>We do not share your mess records (meals, bazaar expenses, rent, or calculations) with advertisers.</li>
+          <li>We do not upload or store images or video from your camera.</li>
+          <li>We do not read your contacts, SMS messages, call logs, or precise GPS location.</li>
         </ul>
 
         <h2>4. Who else can see your data</h2>
         <p>
-          Other <em>active members of the same mess</em> can see the mess records you
-          add. This is the point of the app — full transparency inside a mess.
+          Other <em>active members of the same mess</em> can see your display name,
+          seat rent, and the mess records you participate in. Shared visibility is
+          the core purpose of Bachelor Book so every roommate sees the same numbers.
         </p>
-        <p>We use the following sub-processors to operate the Service:</p>
+        <p>We use the following third-party service providers (sub-processors) to run the Service:</p>
         <ul>
-          <li><strong><a href="https://firebase.google.com/support/privacy">Google Firebase</a></strong> — authentication and push notifications.</li>
-          <li><strong><a href="https://privacy.microsoft.com/privacystatement">Microsoft Azure</a></strong> — runs the application logic (the backend) on cloud servers.</li>
-          <li><strong><a href="https://aiven.io/privacy">Aiven</a></strong> — provides the managed database where mess records are stored.</li>
-          <li><strong><a href="https://policies.google.com/privacy">Google AdMob</a></strong> — serves and measures advertising shown in the app.</li>
+          <li><strong><a href="https://firebase.google.com/support/privacy">Google Firebase</a></strong> — Google Sign-In authentication and Firebase Cloud Messaging push notifications.</li>
+          <li><strong><a href="https://privacy.microsoft.com/privacystatement">Microsoft Azure</a></strong> — hosts the Bachelor Book backend API.</li>
+          <li><strong><a href="https://aiven.io/privacy">Aiven</a></strong> — provides the managed PostgreSQL database storing application records.</li>
+          <li><strong><a href="https://policies.google.com/privacy">Google AdMob</a></strong> — serves and measures in-app advertising.</li>
         </ul>
         <p>
-          Each sub-processor acts on our behalf and is bound by its own privacy and
-          security terms. The links above lead to each provider's compliance page,
-          where the regions, retention, and security posture of their infrastructure
-          are documented. We do not transfer your data to any other third party.
-        </p>
-        <p>
-          <strong>Access control.</strong> A mess's records are visible only to
-          that mess's currently active members. The backend enforces this at the
-          API layer: requests from users who are not active members of the mess
-          are rejected, and users who have left or been removed cannot see any of
-          that mess's data — including past activity — unless and until they are
-          re-added with a fresh invite.
+          <strong>Strict mess access control.</strong> A mess's records are accessible
+          only to active members of that mess. Requests from non-members — or former
+          members who left or were removed — are rejected at the API layer.
         </p>
 
         <h2>5. Data retention</h2>
         <p>
-          Account data and mess records are kept for as long as your account is
-          active. When a mess is closed by its members, the records are retained
-          for a period after closure in case of dispute, then deleted from active
-          systems. Audit-log entries may be retained longer in aggregated form.
-          FCM device tokens are deleted when you sign out or revoke notification
-          permission. AdMob advertising identifiers follow the retention practices
-          described in Google's privacy policy.
+          We retain your account profile and mess records while your account remains
+          active. FCM device tokens are removed when you sign out, delete your
+          account, or when tokens expire.
         </p>
         <p>
-          When you leave a mess, your membership row is end-dated but the mess's
-          own records (meals, expenses, members, audit log) are not deleted — the
-          mess continues to exist and is owned by its remaining members. You lose
-          access to those records as soon as your membership ends (see Section 6).
+          When you leave a shared mess, your membership is end-dated and your access
+          ends immediately, while historical meal and expense counts up to your
+          departure date remain part of the mess's financial record for the remaining
+          members.
+        </p>
+        <p>
+          AdMob advertising identifiers and analytics follow the retention periods
+          described in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
         </p>
 
-        <h2>6. Your rights</h2>
-        <p>You can at any time:</p>
+        <h2>6. Account deletion and your rights</h2>
+        <div class="callout">
+          <strong>Instant in-app account deletion:</strong> You can permanently delete
+          your account directly inside Bachelor Book at any time — go to
+          <strong>Mess tab → Danger Zone → Delete Account</strong> (or tap
+          <strong>Delete Account</strong> on the Welcome screen if you are not in a mess).
+          See our <a href="./delete-account.html">Account Deletion Guide</a> for full details
+          or to submit a deletion request without the app installed.
+        </div>
+        <p>When you delete your account:</p>
         <ul>
-          <li>View the data associated with your account inside the app.</li>
-          <li>Leave a mess. Leaving immediately removes your access to that mess:
-            the app stops showing it, the backend stops returning any of its data
-            to you, and you will not receive further push notifications about it.
-            To rejoin later, you need a fresh invite from a current member — your
-            old membership is treated as closed and does not give you any
-            read-only access to past records.</li>
-          <li>Sign out and request deletion of your account by contacting us.</li>
-          <li>Reset or delete your Android advertising ID from your device settings (Settings → Google → Ads).</li>
-          <li>Opt out of personalized advertising through <a href="https://adssettings.google.com">Google Ads Settings</a>.</li>
+          <li><strong>Deleted immediately:</strong> Your name, email address, profile photo URL, sign-in identifier, and all FCM push notification tokens are permanently erased. Any solo mess where you were the only member is permanently deleted.</li>
+          <li><strong>De-identified for roommate accuracy:</strong> In shared messes with other roommates, your membership is closed (another member is automatically promoted if you were the sole manager) and your past numerical meal/expense totals remain de-identified as <em>"Deleted Member"</em> so your roommates' historical calculations do not break.</li>
         </ul>
-        <p>
-          To request export or deletion of your account and the data associated with
-          it, email <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>
-          from the address you signed in with. We respond within 30 days.
-        </p>
+        <p>You can also at any time:</p>
+        <ul>
+          <li>Leave any mess from inside the app (Mess tab → Danger Zone → Leave Mess).</li>
+          <li>Revoke notification or camera permissions in your Android system settings.</li>
+          <li>Reset or delete your Android Advertising ID (Settings → Privacy / Google → Ads).</li>
+          <li>Opt out of personalized advertising at <a href="https://adssettings.google.com">adssettings.google.com</a>.</li>
+          <li>Request data export or deletion by emailing <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a> from your sign-in email address (we respond within 30 days).</li>
+        </ul>
 
-        <h2>7. Children and families</h2>
+        <h2>7. Children's privacy</h2>
         <p>
-          The Service is not directed to children under 13, and we do not knowingly
-          collect personal information from children under 13. AdMob is configured
-          to treat all ad requests as coming from users above the age threshold
-          required by Google. If you believe a child has signed up, contact us and
-          we will delete the account.
+          Bachelor Book is intended for adults and college/university flatmates and is
+          not directed to children under 13 (or the applicable digital consent age in
+          your region). We do not knowingly collect personal information from children.
+          If you believe a child has created an account, contact us at
+          <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>
+          and we will promptly delete it.
         </p>
 
         <h2>8. Security</h2>
         <p>
-          We use HTTPS for all traffic between the app and the backend, Firebase
-          short-lived ID tokens for authentication, and access checks at the API
-          layer so users only see records for messes they are active members of. No
-          method of transmission over the internet, however, is 100% secure.
+          All communication between the mobile app and our backend uses encrypted HTTPS
+          (TLS). API requests are authenticated with short-lived Google/Firebase ID
+          tokens and authorized per mess membership on the server. While we follow
+          industry-standard safeguards, no method of electronic transmission or storage
+          is 100% immune to risk.
         </p>
 
         <h2>9. Advertising (Google AdMob)</h2>
         <p>
-          The free version of the app shows advertising served by Google AdMob. By
-          using the app you agree that Google may use advertising identifiers and
-          related data to select and serve ads, as described in
-          <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>
-          and the
-          <a href="https://support.google.com/admob/answer/6128543">AdMob privacy
-          and messaging documentation</a>.
+          The free version of Bachelor Book displays ads provided by Google AdMob to
+          support server and hosting costs. Google may use your Android Advertising ID,
+          device signals, and IP address to serve and measure ads as described in
+          <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and
+          <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from apps that use our services</a>.
         </p>
-        <p><strong>Default ad personalization.</strong> In regions where we are not
-          required by law to collect consent, the app serves non-personalized ads
-          by default. Non-personalized ads use contextual information (such as the
-          app screen you are viewing) but do not use your advertising ID to build
-          a profile or show ads based on your activity across other apps.</p>
-        <p><strong>Your ad choices.</strong> You can:</p>
+        <p>You can control ad personalization at any time by:</p>
         <ul>
-          <li>Reset or delete your Android advertising ID (Settings → Google → Ads).</li>
-          <li>Opt out of ad personalization on the web at
-            <a href="https://adssettings.google.com">adssettings.google.com</a>.</li>
-          <li>Stop seeing ads entirely by switching to a future paid version of the
-            app, if and when we offer one.</li>
+          <li>Deleting or resetting your Advertising ID in Android Settings → Google → Ads.</li>
+          <li>Managing your preferences at <a href="https://adssettings.google.com">adssettings.google.com</a>.</li>
         </ul>
         <p>
-          We do not use advertising data for any purpose other than showing and
-          measuring ads inside Bachelor Book. Mess records (meals, expenses,
-          members, rent) are never shared with AdMob or any other advertising
-          provider.
+          Your private mess records (meals, bazaar lists, utilities, rent) are never
+          shared with Google AdMob.
         </p>
 
-        <h2>10. Where your data is processed</h2>
+        <h2>10. International data processing</h2>
         <p>
-          Your data is processed by the sub-processors listed in Section 4 on
-          cloud infrastructure located in regions chosen to be close to our primary
-          user base. Each sub-processor publishes the regions and security
-          certifications of its infrastructure on its own compliance page (linked
-          in Section 4). For most users this means data is processed in the same
-          region they live in; for users in regions we do not currently serve from
-          a nearby datacenter, data may be processed in another region. We do not
-          transfer your data to any party other than the sub-processors listed
-          above.
+          Your data is processed by the cloud sub-processors listed in Section 4 on
+          managed infrastructure that may be located outside your country of residence.
+          Each provider documents its security posture and compliance certifications on
+          the pages linked in Section 4.
         </p>
 
         <h2>11. Changes to this policy</h2>
         <p>
-          We may update this policy as the Service evolves. We will post the new
-          version on this page and update the effective date. If the changes are
-          material, we will notify active users through the app.
+          We may update this Privacy Policy as the app evolves. Any updates will be
+          published on this page with a revised "Last updated" date. For material
+          changes, we will provide notice inside the app.
         </p>
 
         <h2>12. Contact</h2>
         <p>
-          Questions or requests:
+          If you have questions, privacy concerns, or data requests, email us at
           <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>.
         </p>
       </div>
@@ -296,6 +298,7 @@
           <a href="./index.html">Home</a> ·
           <a href="./privacy.html">Privacy</a> ·
           <a href="./terms.html">Terms</a> ·
+          <a href="./delete-account.html">Delete Account</a> ·
           <a href="mailto:bachelorbookapp@gmail.com">bachelorbookapp@gmail.com</a>
         </div>
         <div>© 2026 Bachelor Book</div>

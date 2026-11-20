@@ -1,99 +1,155 @@
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <!--
-    Messmate in-app mark (theme-aware)
-    ───────────────────────────────────────────────
-    Same composition as app_icon.svg (open book +
-    jade bowl + steam), with colors picked to read
-    on both light and dark surfaces:
-
-      • Pages:    a soft cream that sits between
-                  the light theme background and the
-                  dark theme background, with a
-                  subtle indigo spine shadow.
-      • Bowl:     the app's "money" jade — same on
-                  both themes, theme-extension token.
-      • Steam:    a translucent dark-indigo stroke
-                  that reads on light surfaces; the
-                  alpha lets it shift to a subtle
-                  ghost on dark surfaces without
-                  disappearing.
-
-    We avoid pure white in the art so the mark
-    never blends into a white background.
+    Bachelor Book app icon — "Open book + steaming meal bowl"
+    Palette aligned with AppTheme:
+      • Charcoal Slate ground (#2F3740 → #14181E)
+      • Soft Gray / Crisp White pages (#FFFFFF → #E9ECEF)
+      • Brand Teal bowl & accents (#2DD4BF / #14B8A6 / #0F766E)
   -->
+  <defs>
+    <!-- Deep Charcoal brand tile background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2F3740"/>
+      <stop offset="1" stop-color="#14181E"/>
+    </linearGradient>
 
-  <!--
-    ── OPEN BOOK ──
-    Two trapezoid pages meeting at a central spine,
-    bottom-heavy so the book feels grounded.
-  -->
-  <g>
+    <!-- Subtle ambient teal glow behind the bowl -->
+    <radialGradient id="ambientGlow" cx="0.5" cy="0.34" r="0.58">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity="0.22"/>
+      <stop offset="0.6" stop-color="#0F766E" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#14181E" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Left page gradient (bright outer edge, gentle fold shadow toward spine) -->
+    <linearGradient id="leftPage" x1="0" y1="0.3" x2="1" y2="0.5">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.78" stop-color="#F1F3F5"/>
+      <stop offset="1" stop-color="#CED4DA"/>
+    </linearGradient>
+
+    <!-- Right page gradient (fold shadow near spine, bright outer edge) -->
+    <linearGradient id="rightPage" x1="0" y1="0.5" x2="1" y2="0.3">
+      <stop offset="0" stop-color="#C6CDD4"/>
+      <stop offset="0.22" stop-color="#ECEFF2"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <!-- Bowl exterior teal gradient -->
+    <linearGradient id="bowlBody" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="0.48" stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#0D6E66"/>
+    </linearGradient>
+
+    <!-- Bowl rim highlight -->
+    <linearGradient id="bowlRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#99F6E4"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+
+    <!-- Steam soft gradient -->
+    <linearGradient id="steamGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#5EEAD4" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#F8F9FA" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed square background -->
+  <rect x="0" y="0" width="512" height="512" fill="url(#bg)"/>
+  <rect x="0" y="0" width="512" height="512" fill="url(#ambientGlow)"/>
+
+  <!-- Core mark scaled cleanly for Play Store & in-app presence -->
+  <g transform="translate(256 260) scale(1.14) translate(-256 -248)">
+    <!-- ── BOOK COVER BASE ── -->
+    <path d="M 116 356
+             L 116 268
+             Q 116 258 126 256
+             L 256 276
+             L 386 256
+             Q 396 258 396 268
+             L 396 356
+             Q 396 368 384 366
+             Q 318 354 256 382
+             Q 194 354 128 366
+             Q 116 368 116 356 Z"
+          fill="#0F766E"/>
+
+    <!-- Soft shadow beneath pages onto cover -->
+    <path d="M 124 352
+             Q 188 338 256 368
+             Q 324 338 388 352
+             L 388 360
+             Q 324 346 256 376
+             Q 188 346 124 360 Z"
+          fill="#0A2E2B" opacity="0.45"/>
+
+    <!-- ── OPEN BOOK PAGES (joined cleanly at x=256 spine) ── -->
     <!-- Left page -->
-    <path d="M 64 372
-             L 64 244
-             Q 96 200 152 200
-             Q 208 200 248 232
-             L 248 372
-             Q 208 340 152 340
-             Q 96 340 64 372 Z"
-          fill="#F5F3EE"/>
+    <path d="M 124 350
+             L 124 258
+             Q 162 238 206 244
+             Q 236 248 256 266
+             L 256 368
+             Q 214 344 166 344
+             Q 142 344 124 350 Z"
+          fill="url(#leftPage)"/>
 
     <!-- Right page -->
-    <path d="M 448 372
-             L 448 244
-             Q 416 200 360 200
-             Q 304 200 264 232
-             L 264 372
-             Q 304 340 360 340
-             Q 416 340 448 372 Z"
-          fill="#F5F3EE"/>
+    <path d="M 388 350
+             L 388 258
+             Q 350 238 306 244
+             Q 276 248 256 266
+             L 256 368
+             Q 298 344 346 344
+             Q 370 344 388 350 Z"
+          fill="url(#rightPage)"/>
 
-    <!-- Spine shadow -->
-    <path d="M 248 232
-             L 264 232
-             L 264 372
-             L 248 372 Z"
-          fill="#1F1F28" opacity="0.18"/>
+    <!-- Crisp spine crease -->
+    <line x1="256" y1="266" x2="256" y2="368"
+          stroke="#6C757D" stroke-width="2.5" opacity="0.45"/>
 
-    <!-- Ledger lines on the left page (jade) -->
-    <g stroke="#2E8C6E" stroke-width="3"
-       stroke-linecap="round" opacity="0.7">
-      <line x1="104" y1="280" x2="208" y2="280"/>
-      <line x1="104" y1="300" x2="180" y2="300"/>
-      <line x1="104" y1="320" x2="216" y2="320"/>
+    <!-- Ledger lines on left page -->
+    <g stroke="#0F766E" stroke-width="7.5" stroke-linecap="round" opacity="0.72">
+      <line x1="150" y1="286" x2="222" y2="294"/>
+      <line x1="150" y1="312" x2="206" y2="318"/>
     </g>
-    <!-- Ledger lines on the right page -->
-    <g stroke="#2E8C6E" stroke-width="3"
-       stroke-linecap="round" opacity="0.7">
-      <line x1="304" y1="280" x2="408" y2="280"/>
-      <line x1="332" y1="300" x2="408" y2="300"/>
-      <line x1="296" y1="320" x2="408" y2="320"/>
+
+    <!-- Ledger lines on right page -->
+    <g stroke="#0F766E" stroke-width="7.5" stroke-linecap="round" opacity="0.72">
+      <line x1="290" y1="294" x2="362" y2="286"/>
+      <line x1="306" y1="318" x2="362" y2="312"/>
     </g>
-  </g>
 
-  <!--
-    ── JADE BOWL ──
-  -->
-  <g transform="translate(256 196)">
-    <ellipse cx="0" cy="0" rx="120" ry="24" fill="#5FD49F"/>
-    <path d="M -120 0
-             Q -120 48 0 48
-             Q 120 48 120 0
-             Z"
-          fill="#2E8C6E"/>
-    <ellipse cx="0" cy="4" rx="100" ry="12" fill="#1F6A52" opacity="0.5"/>
-  </g>
+    <!-- Soft shadow cast by the bowl onto the upper pages -->
+    <ellipse cx="256" cy="256" rx="68" ry="11" fill="#14181E" opacity="0.18"/>
 
-  <!--
-    ── STEAM ──
-    Rendered as indigo strokes so they read on
-    light surfaces; the alpha keeps them soft on
-    dark surfaces.
-  -->
-  <g fill="none" stroke="#5A5FBA" stroke-width="9"
-     stroke-linecap="round" opacity="0.7">
-    <path d="M 210 156 q -10 -20 6 -34"/>
-    <path d="M 256 142 q -10 -20 6 -34"/>
-    <path d="M 302 156 q -10 -20 6 -34"/>
+    <!-- ── STEAMING MEAL BOWL ── -->
+    <g transform="translate(256 192)">
+      <!-- Deep rounded bowl body -->
+      <path d="M -86 0
+               C -86 44 -48 58 0 58
+               C 48 58 86 44 86 0
+               Z"
+            fill="url(#bowlBody)"/>
+      <!-- Subtle specular highlight on left curve of bowl -->
+      <path d="M -68 13 C -61 36 -39 46 -17 48"
+            fill="none" stroke="#99F6E4" stroke-width="5"
+            stroke-linecap="round" opacity="0.34"/>
+      <!-- Bowl top rim -->
+      <ellipse cx="0" cy="0" rx="86" ry="20" fill="url(#bowlRim)"/>
+      <!-- Inner bowl recess -->
+      <ellipse cx="0" cy="2" rx="70" ry="12" fill="#0B5C55" opacity="0.78"/>
+      <!-- Warm rice/meal mound hint inside bowl -->
+      <path d="M -46 3 Q 0 -10 46 3 Q 0 11 -46 3 Z"
+            fill="#F8F9FA" opacity="0.94"/>
+    </g>
+
+    <!-- ── RISING STEAM (organic S-curves, varied height) ── -->
+    <g fill="none" stroke="url(#steamGrad)" stroke-width="10"
+       stroke-linecap="round">
+      <path d="M 214 162 C 204 148 222 136 212 122"/>
+      <path d="M 256 154 C 244 136 268 122 256 104"/>
+      <path d="M 298 162 C 288 148 306 136 296 122"/>
+    </g>
   </g>
 </svg>
